@@ -60,7 +60,8 @@ const Navbar: React.FC = () => {
               height: 64,
             }}
           />
-          <AddTodo/>
+          
+          
         </Header>
         <Content
           style={{
@@ -69,6 +70,7 @@ const Navbar: React.FC = () => {
             background: colorBgContainer,
           }}
         >
+          <AddTodo/>
           <Todos/>
         </Content>
       </Layout>

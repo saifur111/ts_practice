@@ -22,7 +22,7 @@ const AddTodo = () => {
           }}
           onChange={(e)=>setTodo(e.target.value)}
           value={todo}
-           rows={4} placeholder="Your todo write here" maxLength={6} />
+           rows={4} placeholder="Your todo write here"  />
             <Button type="primary" htmlType="submit" ghost>ADD TASK</Button>
         </Form>
     </div>

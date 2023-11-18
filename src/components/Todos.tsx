@@ -2,11 +2,13 @@
 import React from 'react'
 import { useTodos } from './store/todos'
 import { useSearchParams } from 'next/navigation';
+import {  Button,Card,Checkbox, List } from 'antd';
 
 const Todos = () => {
     const{todos ,toggleTodoAscomplated,handleTodoDelete}=useTodos();
     const searchParems=useSearchParams();
     const todosFilter = searchParems.get('todos');
+   
 
     let filterTodos = todos;
 
@@ -18,26 +20,26 @@ const Todos = () => {
     }
 
   return (
-    <ul>
+    <>
         {
             filterTodos.map((todo)=>{
-              return <li key={todo.id}>
-                
-                  <input type="checkbox" name="" id={`todo-${todo.id}`} checked={todo.complated} onChange={() => toggleTodoAscomplated(todo.id)} />
+              return <List key={todo.id}>
+                <Card>
+                  <Checkbox type="checkbox" name="" id={`todo-${todo.id}`} checked={todo.complated} onChange={() => toggleTodoAscomplated(todo.id)} ></Checkbox>
                   <label htmlFor={`todo-${todo.id}`}>
-                    {todo.task}
-                  </label>
-                  {
-                    todo.complated && (
-                      <button type='button' onClick={()=> handleTodoDelete(todo.id)}>REMOVE</button>
-                    )
-                  }
-
-              </li>
+                      {todo.task}
+                    </label>
+                    {
+                      todo.complated && (
+                        <Button type="primary" onClick={()=> handleTodoDelete(todo.id)}>REMOVE</Button>
+                      )
+                    }
+                </Card>
+              </List>
             }
         )
         }
-    </ul>
+    </>
     
   )
 }
