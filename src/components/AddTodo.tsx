@@ -1,7 +1,7 @@
 "use client"
 import React, { FormEvent, useState } from 'react'
 import { useTodos } from './store/todos';
-import { Layout, Menu, Button, theme,Input ,Form} from 'antd';
+import { message, Space, Button, theme,Input ,Form} from 'antd';
 
 const { TextArea } = Input;
 
@@ -9,21 +9,31 @@ const AddTodo = () => {
   
     const [todo,setTodo]=useState("");
     const {handleAddTodo}=useTodos();
+    const [messageApi, contextHolder] = message.useMessage();
 
   const  handleFormSubmit =()=>{
     handleAddTodo(todo);
     setTodo("");
   }
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'Your Task Added Successfully .',
+    });
+  };
   return (
     <div>
+        {contextHolder}
         <Form  onFinish={handleFormSubmit}>
         <TextArea style={{
             padding: '5px' ,
           }}
           onChange={(e)=>setTodo(e.target.value)}
           value={todo}
-           rows={4} placeholder="Your todo write here"  />
-            <Button type="primary" htmlType="submit" ghost>ADD TASK</Button>
+            placeholder="Your todo write here"  />\
+           <Space>
+              <Button type="primary" onClick={success} htmlType="submit" ghost>ADD TASK</Button>
+           </Space>
         </Form>
     </div>
   )
