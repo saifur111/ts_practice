@@ -1,6 +1,6 @@
 "use client"
 import { ReactNode, createContext, useContext, useState } from "react";
-type Todo ={
+export type Todo ={
     id:string;
     task:string;
     complated:boolean;

@@ -7,7 +7,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, Button, theme } from 'antd';
+import { Layout, Menu, Button, theme, Table } from 'antd';
 import AddTodo from './AddTodo';
 import Todos from './Todos';
 
@@ -72,6 +72,7 @@ const Navbar: React.FC = () => {
         >
           <AddTodo/>
           <Todos/>
+          <Table/>
         </Content>
       </Layout>
     </Layout>

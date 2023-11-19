@@ -1,8 +1,10 @@
 "use client"
 import React from 'react'
-import { useTodos } from './store/todos'
+import { Todo,  useTodos } from './store/todos'
 import { useSearchParams } from 'next/navigation';
-import {  Button,Card,Checkbox, List } from 'antd';
+import {  Button,Card,Checkbox, List, Table } from 'antd';
+
+
 
 const Todos = () => {
     const{todos ,toggleTodoAscomplated,handleTodoDelete}=useTodos();
@@ -22,6 +24,7 @@ const Todos = () => {
   return (
     <>
         {
+
             filterTodos.map((todo)=>{
               return <List key={todo.id}>
                 <Card>
