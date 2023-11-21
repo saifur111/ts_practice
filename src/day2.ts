@@ -111,3 +111,20 @@ userDetailsFunc = (id:stringOrNumber ,user:userInfoType)=>{
     console.log(`User id is ${id}, name is ${user.name} and age is ${user.age}.`)
     sayHelloByOwnAliases(user);
 }
+
+// Class in ts
+
+class Player{
+    name : string;
+    age:number;
+    country : string;
+    constructor (n:string,a:number,c:string){
+        this.name= n;
+        this.age =a;
+        this.country=c;
+
+    }
+    play(){
+    
+    }
+}
