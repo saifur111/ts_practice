@@ -69,7 +69,7 @@ const userDetails = (
     id : string|number,
     user :{name:string;age:number}
 )=>{
-    console.log(`User id is ${id}, name is ${user.name} and age is ${user.age}.`)
+    console.log(`User id is ${id}, Name is ${user.name} and Age is ${user.age}.`)
 };
 
 const sayHello = (user:{name:string;age:number})=>{
@@ -79,14 +79,14 @@ const sayHello = (user:{name:string;age:number})=>{
 // Nijer banano type
 
 type stringOrNumber = string | number;
-type userType = {name:string;age:number}
+type userInfoType = {name:string;age:number}
 
 const sayHelloByOwnAliases = (user:{name:string;age:number})=>{
     console.log(`Hello ${user.age>50 ? "Sir":"Mr."} ${user.name}`);
 }; 
 const userDetailsByOwnAliases  = (
     id : stringOrNumber,
-    user : userType,
+    user : userInfoType,
 )=>{
     console.log(`User id is ${id}, name is ${user.name} and age is ${user.age}.`)
     sayHelloByOwnAliases(user);
@@ -95,3 +95,19 @@ const userDetailsByOwnAliases  = (
 userDetailsByOwnAliases(234,{name:"Md Saifur Rahman",age:26})
 
 
+//Function Signature 
+
+let myFuncSyVoid : () => void; // Its not a arrow function this is a syntex .. 
+let myFuncSyString : (x:string , y:string) => string; // Its not a arrow function this is a syntex .. 
+
+myFuncSyString =(a:string,b:string) =>{
+    return `User id is ${a}, Name is ${b}`;
+}
+console.log(myFuncSyString('Sjdj67',"Sabbir Rahman"));
+
+let userDetailsFunc : (id:stringOrNumber ,userInfo:userInfoType) => void;
+
+userDetailsFunc = (id:stringOrNumber ,user:userInfoType)=>{
+    console.log(`User id is ${id}, name is ${user.name} and age is ${user.age}.`)
+    sayHelloByOwnAliases(user);
+}
