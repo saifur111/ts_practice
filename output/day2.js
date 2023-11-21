@@ -48,3 +48,18 @@ const voidFunc = (a, b, c = "true") => {
     console.log(`Hello ${a} ${b}`);
 };
 voidFunc("A", "B", "C");
+// Type Aliases {common kore dey same jinis golo}
+const userDetails = (id, user) => {
+    console.log(`User id is ${id}, name is ${user.name} and age is ${user.age}.`);
+};
+const sayHello = (user) => {
+    console.log(`Hello ${user.age > 50 ? "Sir" : "Mr."} ${user.name}`);
+};
+const sayHelloByOwnAliases = (user) => {
+    console.log(`Hello ${user.age > 50 ? "Sir" : "Mr."} ${user.name}`);
+};
+const userDetailsByOwnAliases = (id, user) => {
+    console.log(`User id is ${id}, name is ${user.name} and age is ${user.age}.`);
+    sayHelloByOwnAliases(user);
+};
+userDetailsByOwnAliases(234, { name: "Md Saifur Rahman", age: 26 });
