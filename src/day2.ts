@@ -112,19 +112,3 @@ userDetailsFunc = (id:stringOrNumber ,user:userInfoType)=>{
     sayHelloByOwnAliases(user);
 }
 
-// Class in ts
-
-class Player{
-    name : string;
-    age:number;
-    country : string;
-    constructor (n:string,a:number,c:string){
-        this.name= n;
-        this.age =a;
-        this.country=c;
-
-    }
-    play(){
-    
-    }
-}

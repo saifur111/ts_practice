@@ -75,13 +75,3 @@ userDetailsFunc = (id, user) => {
     console.log(`User id is ${id}, name is ${user.name} and age is ${user.age}.`);
     sayHelloByOwnAliases(user);
 };
-// Class in ts
-class Player {
-    constructor(n, a, c) {
-        this.name = n;
-        this.age = a;
-        this.country = c;
-    }
-    play() {
-    }
-}
