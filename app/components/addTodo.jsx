@@ -5,6 +5,8 @@ import Todos from './todos'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_NAME } from '../redux/features/profileSlices';
+import { FaRegUser } from "react-icons/fa";
+import { IoMdPersonAdd } from "react-icons/io";
 
 
 
@@ -21,7 +23,7 @@ const AddTodo = () => {
 function DisplayName(){
   console.log(name);
   return(
-    <h1>User Name : {name}</h1>
+    <h1>{name}</h1>
   )
 }
     
@@ -29,12 +31,22 @@ function DisplayName(){
     <>
         <div>
             <h1 className='text-center'>Todo By Redux ToolKit</h1>
-            <div className="lex justify-center items-center bg-blue-300">
-            <input type="text" placeholder="Enter user name ..." ref={inputName} />
-            <button onClick={submitName}>Enter Name</button>
-            <DisplayName/>
+            <div className="flex  flex-row justify-center items-center bg-blue-300 p-10">
+              <div class="relative text-gray-600 focus-within:text-gray-400">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                    <button onClick={submitName} class="p-1 focus:outline-none focus:shadow-outline">
+                    <IoMdPersonAdd/>
+                    </button>
+                  </span>
+                  <input type="text" placeholder="Enter user name ..." ref={inputName} name="q" class="py-2 text-sm text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"  autocomplete="off"/>
+                </div>       
           </div>
-            <Todos/>
+          <div className="flex  flex-row gap-2 justify-center items-center bg-blue-300 pb-5">
+                <DisplayName/>
+                <FaRegUser/>
+          </div>
+            
+          <Todos/>
         </div>
     </>
     
